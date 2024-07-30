@@ -22,21 +22,4 @@ jobs:
           java-version: '12.x'
           cache: 'gradle'
 
-      - name: Set up Flutter
-        uses: subosito/flutter-action@v2
-        with:
-          flutter-version: '3.16.9'
-          channel: 'stable'
-          cache: true
-
-      - name: Get dependencies
-        run: flutter pub get
-
-      - name: Build APK for arm64-v8a
-        run: flutter build apk --release --target-platform=android-arm64
-
-      - name: Archive APKs
-        uses: actions/upload-artifact@v3
-        with:
-          name: app-releases
-          path: build/app/outputs/flutter-apk/
+      
