@@ -21,5 +21,10 @@ jobs:
           distribution: 'zulu'
           java-version: '12.x'
           cache: 'gradle'
+          
+      - name: Grant execute permission for gradlew
+      run: chmod +x gradlew
+    - name: Build with Gradle
+      run: ./gradlew build
 
       
